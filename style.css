@@ -1,0 +1,24 @@
+.jiaoEditor{
+	border:1px solid #ccc;
+	border-radius:3px;
+	position:relative;
+	width:500px;
+	height:140px;
+}
+.jiaoEditor .toolbar{
+	height:40px;
+	background:#f4f4f4;
+	border-bottom:1px solid #ccc;
+}
+.jiaoEditor .editor-field{
+	box-shadow:inset 1px 1px #ddd;
+	height:110px;
+	outline:none;
+}
+.tool-icon{
+	float:left;
+	padding:10px;
+}
+#sub{
+	border:1px solid #ccc;
+}
