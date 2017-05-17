@@ -58,6 +58,14 @@ create table if not exists `log`(
 	primary key (`log_id`)
 ) engine=myisam default charset=utf8 comment='访问记录表';
 
-
+drop table if exists `about_comment`;
+create table if not exists `about_comment`(
+	`acom_id` int(11) unsigned not null auto_increment comment 'ID',
+	`acom_user` varchar(255) not null default '路人甲' comment '评论人',
+	`acom_content` text comment '内容',
+	`acom_toid` int(11) unsigned not null default 0 comment 'parentID',
+	`acom_createtime` DATETIME default '2016-10-10 00:00:00' comment '创建时间',
+	primary key (`acom_id`)
+)engine=myisam default charset=utf8 comment='访问记录表';
 	
 	
