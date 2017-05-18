@@ -33,7 +33,29 @@
     <title>奔腾年代博客</title>  
 </head>
 <body>
-	<h1><a href="index.php">奔腾年代</a></h1>
-
-
-	<hr>
+	<div class="redback" id="hdr">
+		<div id="title">
+			<a href="index.php" rel="index">
+					<h1>奔腾年代</h1>
+			</a>
+		</div>
+		<div id="nav">
+					<ul>
+						<li>
+								<a href="index.php" >
+								<div class="navmain">博客</div>
+								<div class="navsub">BLOG</div>
+								</a>
+						</li>
+						
+						<li>
+								<a href="about.php">
+								<div class="navmain">留言</div>
+								<div class="navsub">ABOUT</div>
+								</a>
+						</li>
+						
+					<ul>
+		</div>
+	</div>
+	

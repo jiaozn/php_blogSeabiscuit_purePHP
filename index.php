@@ -9,7 +9,7 @@
 	<?php
 		require_once("header.php");
 	?>
-	
+	<div id="wrap">
 	<!--2.边栏-->
 	<?php
 		require("sidebar.php");
@@ -19,6 +19,7 @@
 	<?php
 		require("index-content.php");
 	?>
+	</div>
 	<!--4.尾部-->
 	<?php
 		require("footer.php");

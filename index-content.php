@@ -1,4 +1,4 @@
-<h1>index-content</h1>
+<div id="index-content">
 <?php
 //S计算本页应该展示文章数
 	$sql="select count(`art_id`) from article";
@@ -86,39 +86,53 @@
 			//S开始显示内容
 			foreach($a_array as $akey=>$avalue){
 			?>
-				<h2>
+		<div class="onearticle">
+				<div class="onearticletitle">
 					<a href="single.php?blog=<?php echo $avalue['art_id'];?>" rel="<?php echo $avalue['art_title'];?>">
-						<?php echo $avalue['art_title'];?>
+						<h2><?php echo $avalue['art_title'];?></h2>
 					</a>
-				</h2>
-				<p>
-					<?php echo $avalue['art_content'];?>
-				</p>
-				分类：
-				<a href="category.php?category=<?php echo $avalue['art_categoryid'];?>">
-					<?php echo $avalue['cat_title'];?>
-				</a>
-				<span>
-					文章热度：<?php echo $avalue['art_hot'];?>
-				</span>	
-				<span>
-					创建时间：<?php echo $avalue['art_createtime'];?>
-				</span>	
-				<span>
-					评论数：<?php echo $avalue['acnum'];?>
-				</span>
+				</div>
+			<div class="onearticledown">
+				<div class="onearticleright">
+							<div class="onearticlecontent">	
+									<p>
+										<?php echo $avalue['art_content'];?>
+									</p>
+							</div>
+							<div class="onearticleinfo">
+									分类：
+									<a href="category.php?category=<?php echo $avalue['art_categoryid'];?>">
+										<?php echo $avalue['cat_title'];?>
+									</a>
+									<span>
+										文章热度：<?php echo $avalue['art_hot'].'℃';?>
+									</span>	
+									<span>
+										评论数：<?php echo $avalue['acnum'];?>
+									</span>
+									<span>
+										创建时间：<?php echo $avalue['art_createtime'];?>
+									</span>	
+							</div>
+				</div>
+				<!--onearticleright-->
+				<div class="onearticletags">
 				<?php 
 					for($j=0;$j<sizeof($avalue['tag']['tag_id']);$j++){
 						printf('<a href="tag.php?tag=%s" rel="nofollow">%s</a>',$avalue['tag']['tag_id'][$j],$avalue['tag']['tag_title'][$j]);
-						echo "|";
 					}
 				?>
+				</div>
+			</div>
+			<!--onearticledown-->
+		</div>
+		<!--onearticle-->
 			<?php
 			}
 
 
 			if($pagenow==1){
-				echo '<hr>
+				echo '
 				<span class="grey">首页</span>';
 			}else{
 				printf('<span class="normal"><a href="index.php?pagenow=%d" rel="nofollow">首页</a></span>',1);
@@ -128,3 +142,4 @@
 			}
 }
 ?>
+</div>
