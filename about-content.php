@@ -1,4 +1,4 @@
-<h1>about-content</h1>
+<div id="index-content">
 <?php
 	$sql="select count(`acom_id`) from about_comment where acom_toid=0";
 	$row=$mysqli->query($sql)->fetch_row();
@@ -20,7 +20,7 @@
 					$sql="select * from about_comment where acom_toid='$acom_id' order by acom_createtime asc";
 					if ($result = $mysqli->query($sql)) {
 						while ($row = $result->fetch_row()) {
-							printf ("<div>id=%d,用户%s说：%s,%s<a href='#' onclick='acomreply(%d)' rel='nofollow'>回复</a>", $row[0], $row[1],$row[2],$row[4],$row[0]);
+							printf ("<div class='oneacom'><i class='fa fa-comment-o fa-fw'></i>%s说：%s<div class='acreplyinfo'><i class='fa fa-clock-o fa-fw'></i>%s<div onclick='acomreply(%d,%s)' class='acreply'>回复<i class='fa fa-reply fa-fw'></i></div></div>", $row[1],$row[2],$row[4],$row[0],'"'.$row[1].'"');
 							getChildren($row[0]);
 							printf("</div>");
 						}
@@ -37,7 +37,7 @@
 						}else{
 							$pagenow=1;
 						}
-			$numperpage=10;
+			$numperpage=5;
 			$pagesum=ceil($comsum/$numperpage);
 			$fromnum=5*($pagenow-1);
 			
@@ -54,17 +54,19 @@
 				$ac_array[$i]['acom_content']=$acom_content;
 				$ac_array[$i]['acom_toid']=$acom_toid;
 				$ac_array[$i]['acom_createtime']=$acom_createtime;
-				printf('<div>id=%d,name=%s 说：%s发表时间%s<a href="#" onclick="acomreply(%d)" rel="nofollow">回复</a>',$acom_id,$acom_user,$acom_content,$acom_createtime,$acom_id);
+				printf('<div class="onechacom"><span class="acid"><i class="fa fa-comment-o fa-fw"></i></span>%s 说：%s<div class="acreplyinfo"><i class="fa fa-clock-o fa-fw"></i>%s<div onclick="acomreply(%s,%s)" class="acreply">回复<i class="fa fa-reply fa-fw"></i></div></div>',$acom_user,$acom_content,$acom_createtime,$acom_id,"'".$acom_user."'");
 									getChildren($acom_id);
 				printf('</div>');
 				$i++;
 			}
-				$mysqli->close();
 	}
 ?>
 <hr>	
-			<div class="" contentEditable="true" id="editor-author">
-				路人甲
+	<div id="acompostpart">
+	<div id="result"></div>
+			<div id="acom1line">
+					昵称：
+					<div class="" contentEditable="true" id="editor-author">路人甲</div>
 			</div>
 			<div id="editor-hidden">
 			</div>
@@ -80,20 +82,20 @@
 					<div class="fa fa-image"></div>
 				</div>
 			</div>
-			<div class="editor-field" contentEditable="true" id="editor-content">
-				内容输入框
-			</div>
+			<div class="editor-field" contentEditable="true" id="editor-content"></div>
 		</div>
-		<div id="sub" draggable="true">提交</div>
-		<div id="result"></div>
+		<div id="sub" draggable="true"><i class="fa fa-paper-plane-o fa-fw"></i>马上吐槽！</div>
 		
+	</div>
+</div>		
 		
 <script type="text/javascript">
-		function acomreply(pid){
+		function acomreply(pid,uname){
 			document.getElementById("editor-hidden").innerHTML=pid;
-			//alert(pid);
-		}
+			document.getElementById("acompostpart").scrollIntoView(true);
+		};
 		window.onload=function(){
+		
 				document.getElementById("bebold").onclick=function(){
 					document.execCommand("bold");
 				};
@@ -112,20 +114,19 @@
 							}
 							 xmlhttp.open("POST","acom-rec.php",true); 
 							 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-							 alert("name="+document.getElementById("editor-author").innerHTML+
-							 "&content="+document.getElementById("editor-content").innerHTML+
-							 "&pid="+document.getElementById("editor-hidden").innerHTML);
+							 // alert("name="+document.getElementById("editor-author").innerHTML+
+							 // "&content="+document.getElementById("editor-content").innerHTML+
+							 // "&pid="+document.getElementById("editor-hidden").innerHTML);
 							 xmlhttp.send("name="+document.getElementById("editor-author").innerHTML+
 							 "&content="+document.getElementById("editor-content").innerHTML+
-							 "&pid="+document.getElementById("editor-hidden").innerHTML
-							 ); 
+							 "&pid="+document.getElementById("editor-hidden").innerHTML); 
 							xmlhttp.onreadystatechange=function()
 								{
 									if (xmlhttp.readyState==4 && xmlhttp.status==200)
 									{
 										document.getElementById("result").innerHTML=xmlhttp.responseText;
 									}
-								}
+								};
 							//xmlhttp.open("POST","http://localhost/test.php",true);
 							//xmlhttp.send();
 				};

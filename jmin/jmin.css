@@ -1,0 +1,86 @@
+ *{padding:0;
+margin:0;
+text-decoration:none;
+list-style:none;
+font-family:"Microsoft YaHei",Î¢ÈíÑÅºÚ,"MicrosoftJhengHei",»ªÎÄÏ¸ºÚ,STHeiti,MingLiu;
+font-weight:normal;
+font-size:15px;
+color:#666;
+}
+#loginbar{
+	margin:0 auto;
+	margin-top:10em;
+	border:1px solid red;
+	text-align:center;
+}
+#header{
+/* 	margin:0 auto;
+	padding:1em;
+	background-color:#212121;
+	color:#f2f2f2; */
+}
+#header a{
+/* 	color:#f2f2f2;
+	background-color:#E02222;
+	padding:0.5em;
+	margin-left:2em; */
+}
+#wrap{
+/* 	clear:both;
+	width:100%;
+	overflow:hidden; */
+}
+#sidebar{
+float:left;
+width:15%;	
+background-color:#3d3d3d;
+text-align:center;
+}
+#sidebar a{
+	display:inline-block;
+	margin:1em;
+	color:#f1f1f1;
+}
+#sidebar li:hover{
+	background-color:#575757;
+}
+#content{
+/* 	float:left;
+	width:65%;
+	margin:1em 2em;
+	padding:1em 2em;
+	  -moz-box-shadow:1px 1px 2px rgba(9, 9, 9, .3);  
+    -webkit-box-shadow:1px 1px 2px rgba(9, 9, 9, .3);
+     box-shadow:  1px 1px 7px rgba(9, 9, 9, .3); */
+}
+#listArticleTable{
+	border-collapse:collapse;
+	border:none;
+}
+#listArticleTable th{
+	background-color:#f9f9f9;
+	padding: 0.2em 1em;
+}
+#listArticleTable tr:hover{
+		background-color:#f9f9f9;
+}
+#listArticleTable td{
+	border-bottom:solid #e0e0e0 1px;
+	text-align:center;
+	padding: 0.2em 1em;
+}
+#footer{
+/* 	text-align:center;
+	padding:3em 0;
+	margin-top:5em;
+	-moz-box-shadow:1px 1px 2px rgba(9, 9, 9, .3);  
+    -webkit-box-shadow:1px 1px 2px rgba(9, 9, 9, .3);
+     box-shadow:  0px -2px 4px rgba(9, 9, 9, .1); */
+}
+.oneline{
+	display:block;
+	margin:1em 0;
+}
+.inli{
+	display:inline-block;
+}

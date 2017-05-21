@@ -1,4 +1,4 @@
-<h1>index-content</h1>
+<div id="index-content">
 <?php
 //S取分类名字
 	$category=$_GET['category'];
@@ -96,53 +96,71 @@
 			//E向正文数组中添加评论
 				
 				
-				$mysqli->close();
-				//var_dump($a_array);
 				
-				printf("<div>当前分类->%s</div>",$g_cat_title); 
+				printf("<div class='whereami'><i class='fa fa-folder-open-o'></i>当前分类->%s</div>",$g_cat_title); 
 			//S开始显示内容
 			foreach($a_array as $akey=>$avalue){
 			?>
-				
-				<h2>
-					<a href="category.php?category=<?php echo $avalue['art_id'];?>" rel="<?php echo $avalue['art_title'];?>">
-						<?php echo $avalue['art_title'];?>
-					</a>
-				</h2>
-				<p>
-					<?php echo $avalue['art_content'];?>
-				</p>
-				分类：
-				<a href="category.php?category=<?php echo $avalue['art_categoryid'];?>">
-					<?php echo $avalue['cat_title'];?>
-				</a>
-				<span>
-					文章热度：<?php echo $avalue['art_hot'];?>
-				</span>	
-				<span>
-					创建时间：<?php echo $avalue['art_createtime'];?>
-				</span>	
-				<span>
-					评论数：<?php echo $avalue['acnum'];?>
-				</span>
-				<?php 
-					for($j=0;$j<sizeof($avalue['tag']['tag_id']);$j++){
-						printf('<a href="tag.php?tag=%s" rel="nofollow">%s</a>',$avalue['tag']['tag_id'][$j],$avalue['tag']['tag_title'][$j]);
-						echo "|";
-					}
-				?>
-			<?php
+				<div class="onearticle">
+					<div class="onearticletitle">
+									<a href="category.php?category=<?php echo $avalue['art_id'];?>" rel="<?php echo $avalue['art_title'];?>">
+										<h2><?php echo $avalue['art_title'];?></h2>
+									</a>
+					</div>
+					<div class="onearticledown">
+								<div class="onearticleright">
+									<div class="onearticlecontent">	
+											<p>
+												<?php echo mb_strimwidth(strip_tags($avalue['art_content']), 0, 280,".....",'utf-8');?>
+											</p>
+									</div>
+									<div class="onearticleinfo">
+											
+											<span><i class='fa fa-folder-open-o fa-fw'></i>分类：
+											<a href="category.php?category=<?php echo $avalue['art_categoryid'];?>">
+												<?php echo $avalue['cat_title'];?>
+											</a>
+											</span>
+											<span>
+												<i class='fa fa-thermometer-half fa-fw'></i>文章热度：<?php echo $avalue['art_hot'].'℃';?>
+											</span>	
+											<span>
+												<i class='fa fa-comments-o fa-fw'></i>评论数：<?php echo $avalue['acnum'];?>
+											</span>
+											<span>
+												<i class='fa fa-clock-o fa-fw'></i>创建时间：<?php echo $avalue['art_createtime'];?>
+											</span>	
+									</div>
+								</div>
+								<!--onearticleright-->
+								<div class="onearticletags">
+								<?php 
+									for($j=0;$j<sizeof($avalue['tag']['tag_id']);$j++){
+										printf('<a href="tag.php?tag=%s" rel="nofollow">%s</a>',$avalue['tag']['tag_id'][$j],$avalue['tag']['tag_title'][$j]);
+									}
+								?>
+								</div>
+					</div>
+					<!--onearticledown-->
+		</div>
+		<!--onearticle-->
+				<?php
 			}
 
-
+			echo "<div id='pagenation'>";
 			if($pagenow==1){
-				echo '<hr>
-				<span class="grey">首页</span>';
+				
 			}else{
-				printf('<span class="normal"><a href="category.php?category=%d&pagenow=%d" rel="nofollow">首页</a></span>',$catgory,1);
+				printf('<span class="normal"><a href="index.php?pagenow=%d">首页</a></span>',1);
 			}
 			for($j=1;$j<=$pagesum;$j++){
-				printf('<a href="category.php?category=%d&pagenow=%d" rel="tag-page%d">%d</a>',$category,$j,$j,$j);
+				if($j==$pagenow){
+					printf('<a href="index.php?pagenow=%d" rel="page%d" id="apagenow">%d</a>',$j,$j,$j);
+				}else{
+					printf('<a href="index.php?pagenow=%d" rel="page%d">%d</a>',$j,$j,$j);
+				}
 			}
+			echo "</div>";
 }
 ?>
+</div>

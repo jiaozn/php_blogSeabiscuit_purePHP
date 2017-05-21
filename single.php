@@ -9,16 +9,18 @@
 	<?php
 		require_once("header.php");
 	?>
-	
+	<div id="wrap">
 	<!--2.边栏-->
-	<?php
-		require("sidebar.php");
-	?>
+	
 
 	<!--3.首页内容-->
 	<?php
 		require("single-content.php");
 	?>
+	<?php
+		require("sidebar.php");
+	?>
+	</div>
 	<!--4.尾部-->
 	<?php
 		require("footer.php");

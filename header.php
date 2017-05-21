@@ -28,8 +28,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
     <meta name="keywords"           content="" />  
     <meta name="description"        content="" />
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen and (min-device-width:900px)" >
+	<link rel="stylesheet" href="stylesm.css" type="text/css" media="screen and (max-device-width:900px)" >
 	<link href="fa/css/font-awesome.min.css" rel="stylesheet" />
+	<link id="favicon" href="favicon.ico" rel="icon" type="image/x-icon" />
     <title>奔腾年代博客</title>  
 </head>
 <body>
@@ -38,6 +40,10 @@
 			<a href="index.php" rel="index">
 					<h1>奔腾年代</h1>
 			</a>
+		</div>
+		<div id="smenu">
+					<i class="fa fa-bars fa-2x fa-fw" onclick="smenu()"></i>
+					<i class="fa fa-search fa-2x fa-fw" onclick="ssearch()"></i>
 		</div>
 		<div id="nav">
 					<ul>
@@ -55,7 +61,7 @@
 								</a>
 						</li>
 						
-					<ul>
+					</ul>
 		</div>
 	</div>
 	

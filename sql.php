@@ -67,5 +67,20 @@ create table if not exists `about_comment`(
 	`acom_createtime` DATETIME default '2016-10-10 00:00:00' comment '创建时间',
 	primary key (`acom_id`)
 )engine=myisam default charset=utf8 comment='访问记录表';
-	
-	
+
+drop table if exists `login_failure`;	
+create table if not exists `login_failure`(
+	`failure_id` int(11) unsigned not null auto_increment comment 'ID',
+	`failure_from` varchar(255) comment '用户Ip',
+	`log_createtime` DATETIME default '2016-10-10 00:00:00' comment '创建时间',
+	primary key (`failure_id`)
+) engine=myisam default charset=utf8 comment='登录失败表';
+
+drop table if exists `admin_user`;	
+create table if not exists `admin_user`(
+	`uid` int(11) unsigned not null auto_increment comment 'ID',
+	`uname` varchar(255) comment '用户名',
+	`password` varchar(255) comment '用户密码',
+	`password2` varchar(255) comment '用户密码2',
+	primary key (`uid`)
+) engine=myisam default charset=utf8 comment='管理员表';

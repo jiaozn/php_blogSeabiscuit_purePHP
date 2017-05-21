@@ -13,7 +13,7 @@
 		$stmt=$mysqli->prepare($sql);
 		$stmt->bind_param('ssis',$author,$content,$pid,$time);
 		$stmt->execute();
-		echo "吐槽成功！";
-		echo $author.$content.$pid;
+		echo "<i class='fa fa-user-circle-o fa-fw'></i> <span class='nacau'>".$author."</span>吐槽成功！".
+		"<i class='fa fa-commenting-o fa-fw'></i><span class='nacct'>".$content."</span><div id='resultrefresh'>——你需要...<a href='javascript:location.reload();' rel='nofollow'><i class='fa fa-refresh fa-fw'></i>刷新</a>页面查看效果...<div>";
 			$mysqli->close();
 	?>

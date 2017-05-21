@@ -79,8 +79,7 @@
 			//E向正文数组中添加评论
 				
 				
-				$mysqli->close();
-				//var_dump($a_array);
+
 				
 				
 			//S开始显示内容
@@ -96,22 +95,24 @@
 				<div class="onearticleright">
 							<div class="onearticlecontent">	
 									<p>
-										<?php echo $avalue['art_content'];?>
+										<?php echo mb_strimwidth(strip_tags($avalue['art_content']), 0, 280,".....",'utf-8');?>
 									</p>
 							</div>
 							<div class="onearticleinfo">
-									分类：
+									
+									<span><i class='fa fa-folder-open-o fa-fw'></i>分类：
 									<a href="category.php?category=<?php echo $avalue['art_categoryid'];?>">
 										<?php echo $avalue['cat_title'];?>
 									</a>
-									<span>
-										文章热度：<?php echo $avalue['art_hot'].'℃';?>
-									</span>	
-									<span>
-										评论数：<?php echo $avalue['acnum'];?>
 									</span>
 									<span>
-										创建时间：<?php echo $avalue['art_createtime'];?>
+										<i class='fa fa-thermometer-half fa-fw'></i>文章热度：<?php echo $avalue['art_hot'].'℃';?>
+									</span>	
+									<span>
+										<i class='fa fa-comments-o fa-fw'></i>评论数：<?php echo $avalue['acnum'];?>
+									</span>
+									<span>
+										<i class='fa fa-clock-o fa-fw'></i>创建时间：<?php echo $avalue['art_createtime'];?>
 									</span>	
 							</div>
 				</div>
@@ -130,16 +131,20 @@
 			<?php
 			}
 
-
+			echo "<div id='pagenation'>";
 			if($pagenow==1){
-				echo '
-				<span class="grey">首页</span>';
+				
 			}else{
-				printf('<span class="normal"><a href="index.php?pagenow=%d" rel="nofollow">首页</a></span>',1);
+				printf('<span class="normal"><a href="index.php?pagenow=%d">首页</a></span>',1);
 			}
 			for($j=1;$j<=$pagesum;$j++){
-				printf('<a href="index.php?pagenow=%d" rel="page%d">%d</a>',$j,$j,$j);
+				if($j==$pagenow){
+					printf('<a href="index.php?pagenow=%d" rel="page%d" id="apagenow">%d</a>',$j,$j,$j);
+				}else{
+					printf('<a href="index.php?pagenow=%d" rel="page%d">%d</a>',$j,$j,$j);
+				}
 			}
+			echo "</div>";
 }
 ?>
 </div>
