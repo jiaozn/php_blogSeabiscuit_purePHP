@@ -9,7 +9,7 @@
 		stopBubble(e);
 	}
 	function ssearch(e){
-		var searchbar=document.getElementById("sidebarsearch");
+		var searchbar=document.getElementById("sidebarsearch2");
 		searchbar.style.display=(searchbar.style.display=="block"?"none":"block");
 		stopBubble(e);
 	}
@@ -27,7 +27,7 @@ function stopBubble(e)
 function hMS(){
 	var nav=document.getElementById("nav");
 	nav.style.display="none";
-	var searchbar=document.getElementById("sidebarsearch");
+	var searchbar=document.getElementById("sidebarsearch2");
 	searchbar.style.display="none";
 }
 </script>

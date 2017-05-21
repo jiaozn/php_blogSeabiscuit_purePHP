@@ -82,6 +82,9 @@ border-bottom:1px solid #fff;
 .sidebarcontent{
 	text-align:center;
 }
+#searchremove2{
+	display:none;
+}
 #sidebarcategory a{
 	display:block;
 	margin:0.3em;

@@ -56,13 +56,14 @@ font-size:50px;
 }
 #wrap{
 }
-#sidebar{
-}
 #searchremove{
+	display:none;
+}
+#searchremove2{
 height:0;
 width:0;	
 }
-#sidebarsearch{
+#sidebarsearch2{
 	position:fixed;
 	top:10em;
 	right:3em;
@@ -71,7 +72,7 @@ width:0;
 	border-radius:0.3em;
 	display:none;
 }
-#searchtext{
+#searchtext2{
 	font-size:40px;
 	height:auto;
 	outline:0;
@@ -79,7 +80,7 @@ width:0;
     -webkit-box-shadow:2px 2px 10px rgba(9, 9, 9, .3);
      box-shadow:2px 2px 10px rgba(9, 9, 9, .3);
 }
-#searchsub{
+#searchsub2{
     padding: 0.5em;
     background-color: #F51D34;
     border: 0;

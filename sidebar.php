@@ -1,10 +1,19 @@
 <div id="sidebar">
-			<div class='sidebarpart' id="searchremove" onclick="stopBubble(event)">
+			<div class='sidebarpart' id="searchremove">
 					<div class='sidebartitle'></div>
 					<div class='sidebarcontent' id='sidebarsearch'>
 						<form action="search.php" method="post">
 							<input type="text" name="key" id="searchtext">
 							<input type="submit" value="搜索" id="searchsub"></input>
+						</form>
+					</div>
+			</div>
+			<div class='sidebarpart' id="searchremove2" onclick="stopBubble(event)">
+					<div class='sidebartitle'></div>
+					<div class='sidebarcontent' id='sidebarsearch2'>
+						<form action="search.php" method="post">
+							<input type="text" name="key" id="searchtext2">
+							<input type="submit" value="搜索" id="searchsub2"></input>
 						</form>
 					</div>
 			</div>

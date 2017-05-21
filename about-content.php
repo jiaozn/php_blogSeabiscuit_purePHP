@@ -61,7 +61,8 @@
 			}
 	}
 ?>
-<hr>	
+<div class='whereami'><i class='fa fa-folder-open-o'></i> 关于我
+</div>
 	<div id="acompostpart">
 	<div id="result"></div>
 			<div id="acom1line">
