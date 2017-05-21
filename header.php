@@ -63,5 +63,23 @@
 						
 					</ul>
 		</div>
+		<div id="nav2">
+					<ul>
+						<li>
+								<a href="index.php" >
+								<div class="navmain2">博客</div>
+								<div class="navsub2">BLOG</div>
+								</a>
+						</li>
+						
+						<li>
+								<a href="about.php">
+								<div class="navmain2">留言</div>
+								<div class="navsub2">ABOUT</div>
+								</a>
+						</li>
+						
+					</ul>
+		</div>
 	</div>
 	

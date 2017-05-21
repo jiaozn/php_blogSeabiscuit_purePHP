@@ -91,7 +91,7 @@
 				
 				
 				
-				printf("<div class='whereami'><i class='fa fa-tags fa-fw'></i>当前关键字->%s</div>",$g_tag_title); 
+				printf("<div class='whereami'><i class='fa fa-tags fa-fw'></i> 当前关键字->%s</div>",$g_tag_title); 
 			//S开始显示内容
 			foreach($a_array as $akey=>$avalue){
 			?>
@@ -110,19 +110,19 @@
 							</div>
 							<div class="onearticleinfo">
 									
-									<span><i class='fa fa-folder-open-o fa-fw'></i>分类：
+									<span><i class='fa fa-folder-open-o fa-fw'></i> 分类：
 									<a href="category.php?category=<?php echo $avalue['art_categoryid'];?>">
 										<?php echo $avalue['cat_title'];?>
 									</a>
 									</span>
 									<span>
-										<i class='fa fa-thermometer-half fa-fw'></i>文章热度：<?php echo $avalue['art_hot'].'℃';?>
+										<i class='fa fa-thermometer-half fa-fw'></i> 文章热度：<?php echo $avalue['art_hot'].'℃';?>
 									</span>	
 									<span>
-										<i class='fa fa-comments-o fa-fw'></i>评论数：<?php echo $avalue['acnum'];?>
+										<i class='fa fa-comments-o fa-fw'></i> 评论数：<?php echo $avalue['acnum'];?>
 									</span>
 									<span>
-										<i class='fa fa-clock-o fa-fw'></i>创建时间：<?php echo $avalue['art_createtime'];?>
+										<i class='fa fa-clock-o fa-fw'></i> 创建时间：<?php echo $avalue['art_createtime'];?>
 									</span>	
 							</div>
 				</div>

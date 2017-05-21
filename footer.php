@@ -4,7 +4,7 @@
 	版权所有，保留一切权利！<i class="fa fa-link fa-fw"></i><a href="http://www.dengnihuilai.com" rel="www.dengnihuilai.com">Theme bentengniandai</a></p>
 <script type="text/javascript">
 	function smenu(e){
-		var nav=document.getElementById("nav");
+		var nav=document.getElementById("nav2");
 		nav.style.display=(nav.style.display=="block"?"none":"block");
 		stopBubble(e);
 	}
@@ -25,7 +25,7 @@ function stopBubble(e)
         
 }
 function hMS(){
-	var nav=document.getElementById("nav");
+	var nav=document.getElementById("nav2");
 	nav.style.display="none";
 	var searchbar=document.getElementById("sidebarsearch2");
 	searchbar.style.display="none";

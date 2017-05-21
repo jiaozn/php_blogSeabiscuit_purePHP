@@ -32,6 +32,9 @@ color:#666;
 #title{
 	display:inline-block;
 }
+#nav2{
+	display:none;
+}
 #nav{
 	display:inline-block;
 	text-align:center;
@@ -419,4 +422,41 @@ text-decoration:underline;
 }
 .whereami{
 	padding:1em 0 2em 1em;
+}
+.t1{
+	font-size:20px;
+	line-height:3em;
+}
+.t2{
+	font-size:18px;
+	line-height:3em;
+	text-indent:2em;
+}
+.abinfo{
+	margin-left:7em;
+}
+.abinfo a{
+	color:#e55254;
+	font-size:12px;
+}
+.abinfo a:hover{
+	text-decoration:underline;
+}
+.abimg{
+text-align:center;
+margin:3em 0 3em;
+
+}
+.abimg img{
+	margin:1em;
+-moz-box-shadow:1px 1px 2px rgba(9, 9, 9, .1);  
+    -webkit-box-shadow:1px 1px 2px rgba(9, 9, 9, .1);
+    box-shadow:  1px 1px 5px rgba(9, 9, 9, .2);
+	width:40%;
+}
+.abul{
+	margin:0.5em 0 0.5em 9em;
+}
+.abul li{
+	list-style-type:lower-roman;
 }
