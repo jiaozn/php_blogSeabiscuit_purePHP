@@ -1,5 +1,5 @@
 <div id="sidebar">
-			<div class='sidebarpart' id="searchremove">
+			<div class='sidebarpart' id="searchremove" onclick="stopBubble(event)">
 					<div class='sidebartitle'></div>
 					<div class='sidebarcontent' id='sidebarsearch'>
 						<form action="search.php" method="post">
