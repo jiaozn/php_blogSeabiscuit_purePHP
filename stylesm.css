@@ -164,6 +164,7 @@ width:0;
 	color:#e55254;
 	text-align:center;
 	padding-top:1.3em;
+	word-break:break-all;
 }
 .onearticletitle h2:hover{
 	font-size:50px;
@@ -189,6 +190,7 @@ width:0;
 .onearticlecontent{
 	text-indent:2em;
 	padding:1em 1em 1em 1em;
+		word-break:break-all;
 }
 .onearticleinfo a{
 	color:#E55254;
@@ -233,7 +235,7 @@ width:0;
 #footer p{
 	padding:0.2em 0.5em 0.5em 0.5em;
 	color:#fff;
-	font-size:15px;
+	font-size:25px;
 }
 #footer a{
 	font-size:25px;
@@ -313,6 +315,7 @@ text-decoration:underline;
 	font-size:17px;
 	line-height:1.7em;
 	text-align:left;
+	word-break:break-all;
 }
 #beforecom{
 	font-size:18px;

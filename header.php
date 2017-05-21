@@ -34,7 +34,7 @@
 	<link id="favicon" href="favicon.ico" rel="icon" type="image/x-icon" />
     <title>奔腾年代博客</title>  
 </head>
-<body>
+<body onclick="hMS()">
 	<div class="redback" id="hdr">
 		<div id="title">
 			<a href="index.php" rel="index">
@@ -42,8 +42,8 @@
 			</a>
 		</div>
 		<div id="smenu">
-					<i class="fa fa-bars fa-2x fa-fw" onclick="smenu()"></i>
-					<i class="fa fa-search fa-2x fa-fw" onclick="ssearch()"></i>
+					<i class="fa fa-bars fa-2x fa-fw" onclick="smenu(event)"></i>
+					<i class="fa fa-search fa-2x fa-fw" onclick="ssearch(event)"></i>
 		</div>
 		<div id="nav">
 					<ul>

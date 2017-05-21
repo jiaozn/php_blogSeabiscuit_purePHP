@@ -3,14 +3,33 @@
 	<p>Copyright<i class="fa fa-copyright fa-fw"></i>2017  <i class="fa fa-link fa-fw"></i><a href="http://www.dengnihuilai.com/about.php" rel="AboutMe">奔腾年代</a>
 	版权所有，保留一切权利！<i class="fa fa-link fa-fw"></i><a href="http://www.dengnihuilai.com" rel="www.dengnihuilai.com">Theme bentengniandai</a></p>
 <script type="text/javascript">
-	function smenu(){
+	function smenu(e){
 		var nav=document.getElementById("nav");
 		nav.style.display=(nav.style.display=="block"?"none":"block");
+		stopBubble(e);
 	}
-	function ssearch(){
+	function ssearch(e){
 		var searchbar=document.getElementById("sidebarsearch");
 		searchbar.style.display=(searchbar.style.display=="block"?"none":"block");
+		stopBubble(e);
 	}
+	//阻止事件冒泡函数
+function stopBubble(e)
+{
+    if (e && e.stopPropagation){
+		e.stopPropagation();
+	}
+    else{
+		window.event.cancelBubble=true;
+	}
+        
+}
+function hMS(){
+	var nav=document.getElementById("nav");
+	nav.style.display="none";
+	var searchbar=document.getElementById("sidebarsearch");
+	searchbar.style.display="none";
+}
 </script>
 	<?php
 				$sql="select count(log_id) from log";

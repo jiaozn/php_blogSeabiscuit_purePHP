@@ -97,13 +97,13 @@
 				
 				
 				
-				printf("<div class='whereami'><i class='fa fa-folder-open-o'></i>当前分类->%s</div>",$g_cat_title); 
+				printf("<div class='whereami'><i class='fa fa-folder-open-o'></i> 当前分类->%s</div>",$g_cat_title); 
 			//S开始显示内容
 			foreach($a_array as $akey=>$avalue){
 			?>
 				<div class="onearticle">
 					<div class="onearticletitle">
-									<a href="category.php?category=<?php echo $avalue['art_id'];?>" rel="<?php echo $avalue['art_title'];?>">
+									<a href="single.php?blog=<?php echo $avalue['art_id'];?>" rel="<?php echo $avalue['art_title'];?>">
 										<h2><?php echo $avalue['art_title'];?></h2>
 									</a>
 					</div>
